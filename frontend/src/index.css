@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-google-bg: #131314;
+  --color-google-card: #1f1f1f;
+  --color-google-blue: #8ab4f8;
+  --color-google-text: #e3e3e3;
+  --color-google-secondary: #9aa0a6;
+  --color-google-border: #444746;
+}
+
+body {
+  background-color: var(--color-google-bg);
+  color: var(--color-google-text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.task-card {
+  background-color: var(--color-google-card);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.302), 0 1px 3px 1px rgba(0, 0, 0, 0.149);
+  border: 1px solid var(--color-google-border);
+}
+
+.google-input {
+  background: transparent;
+  border: none;
+  color: var(--color-google-text);
+  font-size: 1.1rem;
+}
+
+.google-input::placeholder {
+  color: var(--color-google-secondary);
+  font-weight: 300;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: var(--color-google-secondary);
+}
+
+.todo-container {
+  max-width: 500px;
+  width: 100%;
+  margin: 5rem auto;
+  padding: 0 1rem;
+}
+
+.sync-btn {
+  background-color: transparent;
+  border: 1px solid var(--color-google-border);
+  border-radius: 500px;
+  transition: background-color 0.2s;
+}
+
+.sync-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.add-btn {
+  color: var(--color-google-blue);
+  transition: transform 0.2s;
+}
+
+.add-btn:active {
+  transform: scale(0.9);
+}
+
+/* Toast Notification */
+.google-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2c2c2e;
+  color: #e3e3e3;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1000;
+  animation: toast-in 0.2s ease-out;
+}
+
+.toast-success {
+  border-left: 3px solid #34a853;
+}
+
+.toast-error {
+  border-left: 3px solid #ea4335;
+}
+
+@keyframes toast-in {
+  from {
+    transform: translate(-50%, 40px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
