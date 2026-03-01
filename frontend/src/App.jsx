@@ -3,7 +3,7 @@ import TaskInput from './components/TaskInput';
 import TaskList from './components/TaskList';
 import SyncButton from './components/SyncButton';
 
-const API_URL = 'http://localhost:8000/api/tasks';
+const API_URL = 'https://daily-task-app-backend.onrender.com/api/tasks';
 
 function App() {
   const [tasks, setTasks] = useState(() => {
